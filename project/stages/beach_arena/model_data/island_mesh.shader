@@ -8,6 +8,6 @@ void vertex() {
 }
 
 void fragment() {
-	float factor = min(1.0, 0.6 + smoothstep(1.0, 3.0, exp(height)));
+	float factor = max(0.9, smoothstep(0.3, 0.4, height));
 	ALBEDO = vec3(1.0, 0.78, 0.0) * factor;
 }
