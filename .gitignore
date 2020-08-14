@@ -1,0 +1,8 @@
+# Env
+.vscode
+
+# Engine
+.import
+
+# Assets
+*.blend[1-9]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://skies/tropical_panorama.tres" type="PanoramaSky" id=1]
+[ext_resource path="res://units/crab/crab.tscn" type="PackedScene" id=2]
+[ext_resource path="res://stages/beach_arena/model_data/island_mesh.tscn" type="PackedScene" id=3]
+[ext_resource path="res://stages/beach_arena/model_data/sea_mesh.material.tres" type="Material" id=4]
+
+[sub_resource type="Environment" id=1]
+background_mode = 2
+background_sky = ExtResource( 1 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 0.84
+ambient_light_sky_contribution = 0.0
+
+[sub_resource type="PlaneMesh" id=2]
+size = Vector2( 32, 32 )
+subdivide_width = 51
+subdivide_depth = 51
+
+[node name="BeachArena" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.984808, 0.144127, -0.0968566, 0, 0.557774, 0.829993, 0.173649, 0.817383, -0.5493, 0, 6, 0 )
+light_energy = 0.45
+shadow_enabled = true
+shadow_bias = 0.03
+directional_shadow_split_1 = 0.4
+directional_shadow_split_2 = 0.6
+directional_shadow_split_3 = 0.8
+directional_shadow_normal_bias = 0.15
+directional_shadow_bias_split_scale = 0.2
+directional_shadow_max_distance = 15.0
+
+[node name="Architecture" type="Node" parent="."]
+
+[node name="IslandMesh" parent="Architecture" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.29939, 0 )
+
+[node name="SeaMesh" type="MeshInstance" parent="Architecture"]
+cast_shadow = 0
+mesh = SubResource( 2 )
+material/0 = ExtResource( 4 )
+
+[node name="Units" type="Node" parent="."]
+
+[node name="Crab" parent="Units" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05238, 1.90274, 2.0855 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.741753, -0.591277, 0.316535, 0, 0.471966, 0.881617, -0.670673, -0.653942, 0.350082, 2.97097, 5.69452, 4.03006 )
+current = true
