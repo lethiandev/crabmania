@@ -4,13 +4,14 @@
 [ext_resource path="res://units/crab/crab.gd" type="Script" id=2]
 
 [sub_resource type="SphereShape" id=1]
-radius = 0.16
+radius = 0.32
 
 [node name="Crab" type="KinematicBody"]
 script = ExtResource( 2 )
 
 [node name="CrabSkin" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.035 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0205471, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.145, 0 )
 shape = SubResource( 1 )
