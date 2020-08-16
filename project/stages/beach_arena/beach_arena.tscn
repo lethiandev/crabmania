@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://skies/tropical_panorama.tres" type="PanoramaSky" id=1]
 [ext_resource path="res://units/crab/crab.tscn" type="PackedScene" id=2]
 [ext_resource path="res://stages/beach_arena/model_data/island_mesh.tscn" type="PackedScene" id=3]
 [ext_resource path="res://stages/beach_arena/model_data/sea_mesh.material.tres" type="Material" id=4]
+[ext_resource path="res://props/bucket/bucket.tscn" type="PackedScene" id=5]
+[ext_resource path="res://props/shell/clam_shell.tscn" type="PackedScene" id=6]
+[ext_resource path="res://props/shell/snail_shell.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
@@ -43,6 +46,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.29939, 0 )
 cast_shadow = 0
 mesh = SubResource( 2 )
 material/0 = ExtResource( 4 )
+
+[node name="Bucket" parent="Architecture" instance=ExtResource( 5 )]
+transform = Transform( 0.740914, -0.242713, 0.626208, 0.372195, 0.924522, -0.0820334, -0.559033, 0.293851, 0.775328, 3.20259, 1.54061, 0.909481 )
+handle_rotation = -2.133
+
+[node name="Bucket2" parent="Architecture" instance=ExtResource( 5 )]
+transform = Transform( 0.738739, 0.551952, 0.386799, 0.456581, 0.0123207, -0.889596, -0.49578, 0.833785, -0.242909, -0.764913, 1.24032, -1.05234 )
+color_preset = 1
+handle_rotation = -2.189
+
+[node name="ClamShell" parent="Architecture" instance=ExtResource( 6 )]
+transform = Transform( -0.913007, -0.151936, -0.378593, -0.249828, 0.941911, 0.224475, 0.322495, 0.29953, -0.89793, -0.244468, 0.646059, 3.87434 )
+
+[node name="SnailShell" parent="Architecture" instance=ExtResource( 7 )]
+transform = Transform( -0.808364, 0.0714881, 1.53449, 0.419453, 1.67836, 0.142776, -1.47778, 0.437282, -0.798861, 2.4121, 0.625206, 3.65445 )
 
 [node name="Units" type="Node" parent="."]
 
