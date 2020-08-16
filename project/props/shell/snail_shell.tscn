@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://props/shell/model_data/snail_shell_model.tscn" type="PackedScene" id=1]
+
+[node name="SnailShell" type="Spatial"]
+
+[node name="SnailShellModel" parent="." instance=ExtResource( 1 )]
