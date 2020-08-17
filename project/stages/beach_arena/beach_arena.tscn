@@ -67,6 +67,6 @@ transform = Transform( -0.808364, 0.0714881, 1.53449, 0.419453, 1.67836, 0.14277
 [node name="Crab" parent="Units" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05238, 1.90274, 2.0855 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.741753, -0.591277, 0.316535, 0, 0.471966, 0.881617, -0.670673, -0.653942, 0.350082, 2.97097, 5.69452, 4.03006 )
+[node name="Camera" type="Camera" parent="Units/Crab"]
+transform = Transform( 0.707107, -0.649557, 0.279421, 0, 0.395161, 0.918612, -0.707107, -0.649557, 0.279421, 1.25739, 4.13375, 1.25739 )
 current = true
