@@ -8,6 +8,16 @@
 [node name="WaterGunSkin" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 
+[node name="Skeleton" parent="Armature" index="0"]
+bones/1/bound_children = [ NodePath("BoneAttachment") ]
+
 [node name="WaterGun" parent="Armature/Skeleton" index="0"]
 material/0 = ExtResource( 2 )
 material/1 = ExtResource( 3 )
+
+[node name="BoneAttachment" type="BoneAttachment" parent="Armature/Skeleton" index="1"]
+transform = Transform( 1, 5.96231e-10, -5.6426e-07, -5.6426e-07, 0, -1, -5.96231e-10, 1, 0, 0, 0.199617, 0 )
+bone_name = "arm"
+
+[node name="Position3D" type="Position3D" parent="Armature/Skeleton/BoneAttachment" index="0"]
+transform = Transform( 1, -5.63664e-07, -5.64856e-07, 5.64856e-07, -4.37114e-08, 1, -5.63664e-07, -1, -4.37111e-08, -1.43672e-11, 0.324107, 0 )

@@ -6,6 +6,9 @@ var motion_direction: Vector3 = Vector3.ZERO
 func _process(delta):
 	motion_direction = _get_input_direction()
 	$CrabSkin.motion_direction = motion_direction
+	
+	if Input.is_action_just_pressed("fire"):
+		$GunSlot/WaterGun.fire()
 
 func _physics_process(p_delta: float) -> void:
 	var motion = motion_direction.normalized()
