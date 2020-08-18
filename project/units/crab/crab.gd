@@ -9,10 +9,10 @@ func _process(delta):
 
 func _physics_process(p_delta: float) -> void:
 	var motion = motion_direction.normalized()
-	linear_velocity.x = motion.x * 100.0 * p_delta
-	linear_velocity.z = motion.z * 100.0 * p_delta
+	linear_velocity.x = motion.x * 160.0 * p_delta
+	linear_velocity.z = motion.z * 160.0 * p_delta
 	
-	linear_velocity += Vector3.DOWN * 2.0 * p_delta
+	linear_velocity += Vector3.DOWN * 70.0 * p_delta
 	linear_velocity = move_and_slide_with_snap(linear_velocity, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(70))
 
 func _get_input_direction() -> Vector3:
