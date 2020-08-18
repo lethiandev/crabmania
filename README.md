@@ -4,6 +4,24 @@ Game tailored for [Weekly Game Jam - Week 162](https://itch.io/jam/weekly-game-j
 
 Currently under development.
 
+## Devlog Day 05 - 18.08.2020
+
+Worked mostly on projectiles and done some fixes.
+
+* Added water gun rotating towards cursor.
+* Added basic projectile with explosion effect after collision.
+* Added crab rotating to movement direction.
+
+![Devlog Day 01 - Screenshot](media/devlog-day05.gif)
+
+## Devlog Day 04 - 17.08.2020
+
+Introduced key mapping and crab movement.
+
+* Added key action bindings for crab movement.
+* Added crab movement based on camera angle.
+* Added camera folowing the player's crab.
+
 ## Devlog Day 03 - 16.08.2020
 
 Today's changes introduce initial weapon model and new props for arenas' designing.
