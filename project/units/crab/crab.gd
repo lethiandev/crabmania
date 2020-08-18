@@ -4,22 +4,28 @@ var linear_velocity: Vector3 = Vector3.ZERO
 var motion_direction: Vector3 = Vector3.ZERO
 
 func _process(delta):
-	var xform = get_viewport().get_camera().global_transform
-	
-	var xasix = _get_input_x_axis()
-	var yaxis = _get_input_y_axis()
-	
-	motion_direction = Vector3.ZERO
-	motion_direction += _normalize_xz(xform.basis.x) * xasix
-	motion_direction += _normalize_xz(xform.basis.z) * yaxis
+	motion_direction = _get_input_direction()
+	$CrabSkin.motion_direction = motion_direction
 
 func _physics_process(p_delta: float) -> void:
-	var motion = Vector3(motion_direction.x, 0.0, motion_direction.z).normalized()
+	var motion = motion_direction.normalized()
 	linear_velocity.x = motion.x * 100.0 * p_delta
 	linear_velocity.z = motion.z * 100.0 * p_delta
 	
 	linear_velocity += Vector3.DOWN * 2.0 * p_delta
 	linear_velocity = move_and_slide_with_snap(linear_velocity, Vector3.DOWN, Vector3.UP, true, 4, deg2rad(70))
+
+func _get_input_direction() -> Vector3:
+	var xform = get_viewport().get_camera().global_transform
+	
+	var xasix = _get_input_x_axis()
+	var yaxis = _get_input_y_axis()
+	
+	var input_direction = Vector3.ZERO
+	input_direction += _normalize_xz(xform.basis.x) * xasix
+	input_direction += _normalize_xz(xform.basis.z) * yaxis
+	
+	return input_direction.normalized()
 
 func _get_input_x_axis() -> float:
 	var r = Input.get_action_strength("move_right")
