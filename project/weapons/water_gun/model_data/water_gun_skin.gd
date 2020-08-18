@@ -8,6 +8,10 @@ func _process(p_delta: float) -> void:
 func _update_rotation(p_target: Vector3) -> void:
 	var look_normal = (global_transform.origin - p_target).normalized()
 	var bone_basis = Transform().looking_at(look_normal, Vector3.UP).basis
+	var distance = p_target.distance_to(global_transform.origin)
+	
+	# Rotate based on distance
+	bone_basis *= Basis(Vector3.RIGHT, -PI * distance / 10.0)
 	
 	# Clamp rotation
 	var euler = bone_basis.get_euler()
