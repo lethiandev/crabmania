@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://skies/tropical_panorama.tres" type="PanoramaSky" id=1]
 [ext_resource path="res://units/crab/crab.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://props/bucket/bucket.tscn" type="PackedScene" id=5]
 [ext_resource path="res://props/shell/clam_shell.tscn" type="PackedScene" id=6]
 [ext_resource path="res://props/shell/snail_shell.tscn" type="PackedScene" id=7]
+[ext_resource path="res://props/target/target.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Environment" id=1]
 background_mode = 2
@@ -75,6 +76,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05238, 1.90274, 2.0855 )
 [node name="Camera" type="Camera" parent="Units/Crab"]
 transform = Transform( 0.707107, -0.649557, 0.279421, 0, 0.395161, 0.918612, -0.707107, -0.649557, 0.279421, 1.25739, 4.13375, 1.25739 )
 current = true
+
+[node name="Target" parent="Units" instance=ExtResource( 8 )]
+transform = Transform( 0.557229, -0.60435, 0.569435, 0.710461, 0.701974, 0.0497831, -0.429815, 0.376821, 0.820527, -1.04971, 1.80858, -0.144609 )
+pole_height = 0.817
+
+[node name="Target2" parent="Units" instance=ExtResource( 8 )]
+transform = Transform( 0.773486, 0, -0.633813, 0, 1, 0, 0.633813, 0, 0.773486, 1.89496, 0.960501, -0.775095 )
+pole_height = 1.082
 
 [node name="Projectiles" type="Node" parent="." groups=[
 "projectiles",
