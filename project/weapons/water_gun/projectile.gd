@@ -17,6 +17,10 @@ func _on_body_entered(p_body: Node) -> void:
 		get_parent().add_child(emitter)
 		emitter.global_transform = global_transform
 		emitter.emitting = true
+		
+		if p_body.has_method("projectile_hit"):
+			p_body.projectile_hit(self)
+		
 		queue_free()
 
 func setup_velocity(p_speed: float) -> void:
