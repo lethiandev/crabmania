@@ -9,6 +9,7 @@ Currently under development.
 Spent some time in Godot internal code to fix GLES2 depth texture reading shaders.
 
 * Fixed Godot problem on reading depth texture from GLES2 shaders.
+* Added FPS counter on the screen.
 
 ## Devlog Day 06 - 19.08.2020
 
