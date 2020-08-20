@@ -4,6 +4,20 @@ Game tailored for [Weekly Game Jam - Week 162](https://itch.io/jam/weekly-game-j
 
 Currently under development.
 
+## Devlog Day 07 - 20.08.2020
+
+Spent some time in Godot internal code to fix GLES2 depth texture reading shaders.
+
+* Fixed Godot problem on reading depth texture from GLES2 shaders.
+
+## Devlog Day 06 - 19.08.2020
+
+Made new prop and worked on initial html5 build deployed via GitHub Pages.
+Test the project on your browser: https://lethiandev.github.io/crabmania/
+
+* Added range target prop.
+* Added initial html5 build on GitHub Pages.
+
 ## Devlog Day 05 - 18.08.2020
 
 Worked mostly on projectiles and done some fixes.
