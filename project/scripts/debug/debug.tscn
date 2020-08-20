@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/debug/fps_label.gd" type="Script" id=1]
+
+[node name="Debug" type="CanvasLayer"]
+
+[node name="FPSLabel" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "FPS: 60 (16ms)"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

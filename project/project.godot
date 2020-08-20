@@ -19,6 +19,10 @@ config/name="Crabmania"
 run/main_scene="res://stages/beach_arena/beach_arena.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Debug="*res://scripts/debug/debug.tscn"
+
 [display]
 
 window/size/width=1280
