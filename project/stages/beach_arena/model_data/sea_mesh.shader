@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode depth_draw_opaque, shadows_disabled;
+render_mode depth_draw_never, depth_test_disable, shadows_disabled;
 
 uniform sampler2D noise_texture;
 varying float wave_height;
@@ -30,5 +30,5 @@ void fragment() {
 	// Apply surface edges colouring
 	float mix_value = smoothstep(0.075, 0.09, pixel_depth);
 	mix_value -= smoothstep(0.1, 0.101, wave_height);
-	ALBEDO = mix(vec3(0.75, 0.9, 1.0), ALBEDO, max(mix_value, 0.0));
+	ALBEDO = mix(vec3(0.75, 0.9, 1.0), ALBEDO, clamp(mix_value, 0.0, 1.0));
 }
